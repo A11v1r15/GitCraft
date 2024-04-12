@@ -59,7 +59,7 @@ public class GitCraft {
 	public static ManifestProvider manifestProvider = null;
 
 	public static void main(String[] args) throws Exception {
-		GitCraft.config = GitCraftCli.handleCliArgs(args);
+		GitCraft.config = args.length == 0 ? GitCraftWizard.Start() : GitCraftCli.handleCliArgs(args);
 		GitCraftPaths.initializePaths(GitCraftPaths.lookupCurrentWorkingDirectory());
 		if (GitCraft.config == null) {
 			return;

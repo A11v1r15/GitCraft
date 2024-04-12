@@ -58,6 +58,9 @@ dependencies {
 	// Decompiler, could be replaced with another fernflower fork
 	implementation "org.vineflower:vineflower:${vineflower_version}"
 
+	// Lanterna
+	implementation "com.googlecode.lanterna:lanterna:3.1.2"
+
 	// Testing
 	testImplementation(platform("org.junit:junit-bom:5.10.+"))
 	testImplementation("org.junit.jupiter:junit-jupiter:5.10.+")
