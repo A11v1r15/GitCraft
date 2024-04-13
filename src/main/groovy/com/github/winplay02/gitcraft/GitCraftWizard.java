@@ -42,6 +42,11 @@ public class GitCraftWizard {
             Panel comboBoxPanel = new Panel(new GridLayout(2));
             GridLayout gridLayout2 = (GridLayout)comboBoxPanel.getLayoutManager();
             gridLayout2.setHorizontalSpacing(1);
+            
+            contentPanel.addComponent(
+                new EmptySpace()
+                        .setLayoutData(
+                                GridLayout.createHorizontallyFilledLayoutData(2)));
 
             // Help button
             /*contentPanel.addComponent(
@@ -143,7 +148,7 @@ public class GitCraftWizard {
             contentPanel.addComponent(
                 new EmptySpace()
                         .setLayoutData(
-                                GridLayout.createHorizontallyFilledLayoutData(3)));
+                                GridLayout.createHorizontallyFilledLayoutData(2)));
             contentPanel.addComponent(
                 new Button("Cancel", () -> {
                     cancel[0] = true;
@@ -168,6 +173,7 @@ public class GitCraftWizard {
                         GridLayout.createHorizontallyEndAlignedLayoutData(1)));
             window.setComponent(contentPanel);
             mainGUI.addWindowAndWait(window);
+            System.out.println(newArgs);
             return cancel[0] ? null : GitCraftCli.handleCliArgs(newArgs.toArray(new String[newArgs.size()]));
         } catch (IOException e) {
             e.printStackTrace();
